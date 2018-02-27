@@ -1,13 +1,44 @@
 <link rel="import" href="../polymer/polymer-element.html">
-
+<link rel="import" href="../my-style/my-style.html">
 <dom-module id="my-button">
   <template>
-    <style>
-      :host {
-        display: block;
+    <style include="my-style">
+      .btn {
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border:1px solid transparent;
+        border-radius: 0.25rem;
+        padding: 0.375rem 0.75rem;
+        line-height: 1.5;
+        font-family: CSChatThaiUI;
+      }
+      .btn:hover{
+        cursor: pointer;
+      }
+      .btn-primary{
+        background-color: var(--bg-color-primary);
+        color: var(--bg-color-white);
+      }
+      .btn-success{
+        background-color: var(--bg-color-success);
+        color: var(--bg-color-white);
+      }
+      .btn-danger{
+        background-color: var(--bg-color-danger);
+        color: var(--bg-color-white);
+      }
+      .btn-warning{
+        background-color: var(--bg-color-warning);
+        color: var(--bg-color-white);
+      }
+      .btn-md{
+        font-size: 1rem;
       }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <button class$="btn btn-[[type]] btn-md"><slot></slot></button>
   </template>
 
   <script>
@@ -23,9 +54,9 @@
       static get is() { return 'my-button'; }
       static get properties() {
         return {
-          prop1: {
+          type: {
             type: String,
-            value: 'my-button'
+            value: 'default'
           }
         };
       }
