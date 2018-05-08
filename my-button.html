@@ -3,7 +3,7 @@
 <dom-module id="my-button">
   <template>
     <style include="my-style">
-      .btn {
+       .btn {
         display: inline-block;
         font-weight: 400;
         text-align: center;
@@ -21,6 +21,11 @@
       .btn-primary{
         background-color: var(--bg-color-primary);
         color: var(--bg-color-white);
+      }
+      .outline-primary{
+        color: var(--bg-color-primary);
+        border: 1px solid var(--bg-color-primary);
+        background-color: var(--bg-color-white);
       }
       .btn-success{
         background-color: var(--bg-color-success);
@@ -42,6 +47,10 @@
         margin: 0.2rem;
         width: 100%;
       }
+      .btn-full-width{
+        width: 100%;
+      }
+      
     </style>
     <button class$="btn btn-[[type]] btn-md"><slot></slot></button>
   </template>
